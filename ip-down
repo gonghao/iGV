@@ -1234,15 +1234,57 @@ route delete -net 98.129.229.0/24 "${VPNGW}"
 route delete -net 98.136.92.0/24 "${VPNGW}"
 ##### end batch route #####
 
-
-
-
 #route delete -host 221.228.255.1 "${OLDGW}"
 #route delete -host 61.147.37.1 "${OLDGW}"
+
 #tumblr
 route delete -net 174.120.0.0/14 "${VPNGW}"
 route delete -net 50.22.0.0/15 "${VPNGW}"
 route delete -net 72.32.231.8 "${VPNGW}"
+
+#The current Amazon EC2 public deleteress ranges are
+route delete -net 207.171.160.0/19 "${VPNGW}"
+route delete -net 216.137.32.0/19 "${VPNGW}"
+
+route delete -net 72.44.32.0/19 "${VPNGW}"
+route delete -net 67.202.0.0/18 "${VPNGW}"
+route delete -net 75.101.128.0/17 "${VPNGW}"
+route delete -net 174.129.0.0/16 "${VPNGW}"
+route delete -net 204.236.192.0/18 "${VPNGW}"
+route delete -net 184.73.0.0/16 "${VPNGW}"
+route delete -net 184.72.128.0/17 "${VPNGW}"
+route delete -net 184.72.64.0/18 "${VPNGW}"
+route delete -net 50.16.0.0/15 "${VPNGW}"
+route delete -net 50.19.0.0/16 "${VPNGW}"
+route delete -net 107.20.0.0/15 "${VPNGW}"
+route delete -net 107.22.0.0/16 "${VPNGW}"
+route delete -net 23.20.0.0/14 "${VPNGW}"
+route delete -net 50.112.0.0/16 "${VPNGW}"
+route delete -net 204.236.128.0/18 "${VPNGW}"
+route delete -net 184.72.0.0/18 "${VPNGW}"
+route delete -net 50.18.0.0/16 "${VPNGW}"
+route delete -net 184.169.128.0/17 "${VPNGW}"
+route delete -net 79.125.0.0/17 "${VPNGW}"
+route delete -net 46.51.128.0/18 "${VPNGW}"
+route delete -net 46.51.192.0/20 "${VPNGW}"
+route delete -net 46.137.0.0/17 "${VPNGW}"
+route delete -net 46.137.128.0/18 "${VPNGW}"
+route delete -net 176.34.128.0/17 "${VPNGW}"
+route delete -net 176.34.64.0/18  "${VPNGW}"
+route delete -net 175.41.128.0/18 "${VPNGW}"
+route delete -net 122.248.192.0/18 "${VPNGW}"
+route delete -net 46.137.192.0/18 "${VPNGW}"
+route delete -net 46.51.216.0/21 "${VPNGW}"
+route delete -net 175.41.192.0/18 "${VPNGW}"
+route delete -net 46.51.224.0/19 "${VPNGW}"
+route delete -net 176.32.64.0/19 "${VPNGW}"
+route delete -net 103.4.8.0/21 "${VPNGW}"
+route delete -net 176.34.0.0/18 "${VPNGW}"
+#route delete -net  "${VPNGW}"
+#route delete -net  "${VPNGW}"
+#route delete -net  "${VPNGW}"
+
+
 #wtf why localhost
 route delete -host 127.0.0.1 "${VPNGW}"
 route delete -net 127.0.0.1 "${VPNGW}"
