@@ -1241,6 +1241,9 @@ route delete -net 98.136.92.0/24 "${VPNGW}"
 route delete -net 174.120.0.0/14 "${VPNGW}"
 route delete -net 50.22.0.0/15 "${VPNGW}"
 route delete -net 72.32.231.8 "${VPNGW}"
+route delete -net 72.21.192.0/19 "${VPNGW}"
+route delete -net 174.120.0.0/14 "${VPNGW}"
+route delete -net 184.172.0.0/15 "${VPNGW}"
 
 #The current Amazon EC2 public deleteress ranges are
 route delete -net 207.171.160.0/19 "${VPNGW}"
