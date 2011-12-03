@@ -18,7 +18,7 @@ route delete -host 61.147.37.1 "${OLDGW}"
 # Google DNS and OpenDNS
 route delete -host 8.8.8.8 "${VPNGW}"
 route delete -host 8.8.4.4 "${VPNGW}"
-route delete -host 106.187.34.91 "${VPNGW}"
+route delete -host 208.67.222.222 "${VPNGW}"
 # backchina.com
 # news.backchina.com
 route delete -host 50.23.162.108 "${VPNGW}"
@@ -1232,10 +1232,11 @@ route delete -net 97.74.215.0/24 "${VPNGW}"
 route delete -net 98.129.229.0/24 "${VPNGW}"
 route delete -net 98.136.92.0/24 "${VPNGW}"
 ##### end batch route #####
+
+
 route delete default "${VPNGW}"
 route delete default "${OLDGW}"
 route add default "${OLDGW}"
-
 
 rm /tmp/pptp_oldgw
 rm /tmp/pptp_vpngw
