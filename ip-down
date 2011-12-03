@@ -1238,8 +1238,8 @@ route delete -net 98.136.92.0/24 "${VPNGW}"
 #route delete -host 61.147.37.1 "${OLDGW}"
 
 #github
+#route delete -net 207.97.227.224/27 "${VPNGW}"
 
-route delete -net 207.97.227.224/27 "${VPNGW}"
 #tumblr
 route delete -net 174.120.0.0/14 "${VPNGW}"
 route delete -net 50.22.0.0/15 "${VPNGW}"
