@@ -11,8 +11,8 @@ if [ ! -e /tmp/pptp_vpngw ]; then
 fi
 
 dscacheutil -flushcache
-route add -host 221.228.255.1 "${OLDGW}"
-route add -host 61.147.37.1 "${OLDGW}"
+
+
 
 ##### begin batch route #####
 # Google DNS and OpenDNS
@@ -1234,6 +1234,16 @@ route add -net 98.136.92.0/24 "${VPNGW}"
 ##### end batch route #####
 
 
+#route add -host 221.228.255.1 "${OLDGW}"
+#route add -host 61.147.37.1 "${OLDGW}"
+#tumblr
+route add -net 174.120.0.0/14 "${VPNGW}"
+route add -net 50.22.0.0/15 "${VPNGW}"
+route add -net 72.32.231.8 "${VPNGW}"
+#wtf why localhost
+route delete -host 127.0.0.1 "${VPNGW}"
+route delete -net 127.0.0.1 "${VPNGW}"
+
 route delete default "${VPNGW}"
-route delete default "${OLDGW}"
+#route delete default "${OLDGW}"
 route add default "${OLDGW}"

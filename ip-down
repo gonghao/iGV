@@ -11,8 +11,9 @@ fi
 
 OLDGW=`cat /tmp/pptp_oldgw`
 VPNGW=`cat /tmp/pptp_vpngw`
-route delete -host 221.228.255.1 "${OLDGW}"
-route delete -host 61.147.37.1 "${OLDGW}"
+
+
+
 
 ##### begin batch route #####
 # Google DNS and OpenDNS
@@ -1234,9 +1235,22 @@ route delete -net 98.136.92.0/24 "${VPNGW}"
 ##### end batch route #####
 
 
-route delete default "${VPNGW}"
-route delete default "${OLDGW}"
-route add default "${OLDGW}"
+
+
+#route delete -host 221.228.255.1 "${OLDGW}"
+#route delete -host 61.147.37.1 "${OLDGW}"
+#tumblr
+route delete -net 174.120.0.0/14 "${VPNGW}"
+route delete -net 50.22.0.0/15 "${VPNGW}"
+route delete -net 72.32.231.8 "${VPNGW}"
+#wtf why localhost
+route delete -host 127.0.0.1 "${VPNGW}"
+route delete -net 127.0.0.1 "${VPNGW}"
+#route delete default "${VPNGW}"
+#route delete default "${OLDGW}"
+#route add default "${OLDGW}"
 
 rm /tmp/pptp_oldgw
 rm /tmp/pptp_vpngw
+
+dscacheutil -flushcache
