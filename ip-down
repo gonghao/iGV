@@ -19,7 +19,7 @@ VPNGW=`cat /tmp/pptp_vpngw`
 # Google DNS and OpenDNS
 route delete -host 8.8.8.8 "${VPNGW}"
 route delete -host 8.8.4.4 "${VPNGW}"
-route delete -host 208.67.222.222 "${VPNGW}"
+route delete -host 202.45.84.58 "${VPNGW}"
 # backchina.com
 # news.backchina.com
 route delete -host 50.23.162.108 "${VPNGW}"
