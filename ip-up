@@ -14,8 +14,8 @@ dscacheutil -flushcache
 #ipup
 
 
-#dns
-route add -host 202.45.84.58
+#dns 202.45.84.58
+route add -host 202.45.84.58 "${VPNGW}"
 #dnsend
 #gfw
 ##### begin batch route #####
