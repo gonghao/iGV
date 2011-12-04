@@ -11,14 +11,18 @@ if [ ! -e /tmp/pptp_vpngw ]; then
 fi
 
 dscacheutil -flushcache
+#ipup
 
 
-
+#dns
+route add -host 202.45.84.58
+#dnsend
+#gfw
 ##### begin batch route #####
 # Google DNS and OpenDNS
 route add -host 8.8.8.8 "${VPNGW}"
 route add -host 8.8.4.4 "${VPNGW}"
-route add -host 202.45.84.58 "${VPNGW}"
+route add -host 208.67.222.222 "${VPNGW}"
 # backchina.com
 # news.backchina.com
 route add -host 50.23.162.108 "${VPNGW}"
@@ -242,7 +246,6 @@ route add -host 124.9.0.73 "${VPNGW}"
 route add -host 124.9.13.21 "${VPNGW}"
 route add -host 125.29.60.4 "${VPNGW}"
 route add -host 125.6.172.181 "${VPNGW}"
-route add -host 127.0.0.1 "${VPNGW}"
 route add -host 128.100.171.12 "${VPNGW}"
 route add -host 129.121.120.82 "${VPNGW}"
 route add -host 130.242.18.28 "${VPNGW}"
@@ -1232,12 +1235,16 @@ route add -net 97.74.215.0/24 "${VPNGW}"
 route add -net 98.129.229.0/24 "${VPNGW}"
 route add -net 98.136.92.0/24 "${VPNGW}"
 ##### end batch route #####
+#gfwend
 
-#route add -host 221.228.255.1 "${OLDGW}"
-#route add -host 61.147.37.1 "${OLDGW}"
+
+#custom
 
 #github
 #route add -net 207.97.227.224/27 "${VPNGW}"
+
+#vbird.dic.ksu.edu.tw
+route add -net 120.0.0.0/8 "${VPNGW}"
 
 #tumblr
 route add -net 174.120.0.0/14 "${VPNGW}"
@@ -1285,14 +1292,9 @@ route add -net 46.51.224.0/19 "${VPNGW}"
 route add -net 176.32.64.0/19 "${VPNGW}"
 route add -net 103.4.8.0/21 "${VPNGW}"
 route add -net 176.34.0.0/18 "${VPNGW}"
-#route add -net  "${VPNGW}"
-#route add -net  "${VPNGW}"
-#route add -net  "${VPNGW}"
+#customend
 
-#wtf why localhost
-route delete -host 127.0.0.1 "${VPNGW}"
-route delete -net 127.0.0.1 "${VPNGW}"
-
+#change default gw
 route delete default "${VPNGW}"
-#route delete default "${OLDGW}"
 route add default "${OLDGW}"
+#end
