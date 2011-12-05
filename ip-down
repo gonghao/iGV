@@ -1292,6 +1292,12 @@ route delete -net 46.51.224.0/19 "${VPNGW}"
 route delete -net 176.32.64.0/19 "${VPNGW}"
 route delete -net 103.4.8.0/21 "${VPNGW}"
 route delete -net 176.34.0.0/18 "${VPNGW}"
+
+#www.mediaatelier.com
+route delete -net 194.126.200.0/24 "${VPNGW}"
+#xiaolife.com
+route delete -net 69.163.128.0/17 "${VPNGW}"
+
 #customend
 
 

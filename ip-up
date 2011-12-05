@@ -1292,6 +1292,12 @@ route add -net 46.51.224.0/19 "${VPNGW}"
 route add -net 176.32.64.0/19 "${VPNGW}"
 route add -net 103.4.8.0/21 "${VPNGW}"
 route add -net 176.34.0.0/18 "${VPNGW}"
+
+#www.mediaatelier.com
+route add -net 194.126.200.0/24 "${VPNGW}"
+#xiaolife.com
+route add -net 69.163.128.0/17 "${VPNGW}"
+
 #customend
 
 #change default gw
