@@ -1,22 +1,22 @@
-#!/bin/sh
-export PATH="/bin:/sbin:/usr/sbin:/usr/bin"
+#!/bin/bash
+export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/sbin
 
-if [ ! -e /tmp/pptp_oldgw ]; then
-        exit 0
+if [ ! -e /tmp/vpn_oldgw ]; then
+    exit 0
 fi
 
-if [ ! -e /tmp/pptp_vpngw ]; then
-        exit 0
+if [ ! -e /tmp/vpn_vpngw ]; then
+    exit 0
 fi
 
-OLDGW=`cat /tmp/pptp_oldgw`
-VPNGW=`cat /tmp/pptp_vpngw`
+OLDGW=`cat /tmp/vpn_oldgw`
+VPNGW=`cat /tmp/vpn_vpngw`
 #ipdown
-
 
 #dns 202.45.84.58
 route delete -host 202.45.84.58 "${VPNGW}"
 #dnsend
+
 #gfw
 ##### begin batch route #####
 # Google DNS and OpenDNS
@@ -153,7 +153,7 @@ route delete -net 72.14.213.0/24 "${VPNGW}"
 # s.ytimg.com
 route delete -net 209.85.147.0/24 "${VPNGW}"
 # udn.com
-route delete -host 210.243.0.0/16 "${VPNGW}"
+route delete -net 210.243.0.0/16 "${VPNGW}"
 # for vimeo
 # av.vimeo.com
 #route delete -net 117.104.138.0/24 "${VPNGW}"
@@ -1237,7 +1237,6 @@ route delete -net 98.136.92.0/24 "${VPNGW}"
 ##### end batch route #####
 #gfwend
 
-
 #custom
 
 #github
@@ -1300,7 +1299,10 @@ route delete -net 69.163.128.0/17 "${VPNGW}"
 
 #customend
 
-
-rm /tmp/pptp_oldgw
-rm /tmp/pptp_vpngw
+rm -f /tmp/vpn_oldgw
+rm -f /tmp/vpn_vpngw
 dscacheutil -flushcache
+
+#end
+
+

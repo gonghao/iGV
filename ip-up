@@ -1,22 +1,31 @@
-#!/bin/sh
-export PATH="/bin:/sbin:/usr/sbin:/usr/bin"
+#!/bin/bash
+export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/sbin
 
-OLDGW=`netstat -nr | grep '^default' | grep -v 'ppp' | sed 's/default *\([0-9\.]*\) .*/\1/'`
-VPNGW=`netstat -nr | grep '^default' | grep 'ppp' | sed 's/default *\([0-9\.]*\) .*/\1/'`
-if [ ! -e /tmp/pptp_oldgw ]; then
-    echo "${OLDGW}" > /tmp/pptp_oldgw
-fi
-if [ ! -e /tmp/pptp_vpngw ]; then
-    echo "${VPNGW}" > /tmp/pptp_vpngw
-fi
+#get gw
+	#get oldgw	
+		OLDGW=`netstat -nr | grep ^default |grep en |awk '{print $2}'`
+		#echo $OLDGW
+	#noneovpn
+		VPNGW=`netstat -nr | grep ^default |grep ppp|awk '{print $2}'`
+		#echo $VPNGW
+	#ovpn
+		if [ -z $VPNGW ]; then
+			VPNGW=`ifconfig | grep -A 3 tun|grep netmask | awk '{print $4}'`
+			#echo $VPNGW
+		fi
+
+#log		
+	echo "${OLDGW}" > /tmp/vpn_oldgw
+	echo "${VPNGW}" > /tmp/vpn_vpngw
 
 dscacheutil -flushcache
-#ipup
 
+#ipup
 
 #dns 202.45.84.58
 route add -host 202.45.84.58 "${VPNGW}"
 #dnsend
+
 #gfw
 ##### begin batch route #####
 # Google DNS and OpenDNS
@@ -153,7 +162,7 @@ route add -net 72.14.213.0/24 "${VPNGW}"
 # s.ytimg.com
 route add -net 209.85.147.0/24 "${VPNGW}"
 # udn.com
-route add -host 210.243.0.0/16 "${VPNGW}"
+route add -net 210.243.0.0/16 "${VPNGW}"
 # for vimeo
 # av.vimeo.com
 #route add -net 117.104.138.0/24 "${VPNGW}"
@@ -1237,7 +1246,6 @@ route add -net 98.136.92.0/24 "${VPNGW}"
 ##### end batch route #####
 #gfwend
 
-
 #custom
 
 #github
@@ -1302,5 +1310,10 @@ route add -net 69.163.128.0/17 "${VPNGW}"
 
 #change default gw
 route delete default "${VPNGW}"
+#openvpn default gw
+route delete 0/1 "${VPNGW}"
+route delete 128.0/1 "${VPNGW}"
 route add default "${OLDGW}"
 #end
+
+
