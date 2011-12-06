@@ -2,10 +2,19 @@
 export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/sbin
 
 #get gw
-	#ovpn
-    VPNGW=`netstat -nr | grep ^0/1 | grep -P 'tun|tap' | head -1 | awk '{print $2}'`
-    #echo OVPN:${VPNGW}
-
+	#noneovpn
+		VPNGW=`netstat -nr | grep ^default |grep ppp|awk '{print $2}'`
+		#echo ${VPNGW}
+	#ovpn tun
+		if [ -z ${VPNGW} ]; then
+			VPNGW=`ifconfig | grep -A 3 tun|grep netmask | awk '{print $4}'`
+			#echo ${VPNGW}
+		fi
+	#ovpn tap
+	if [ -z ${VPNGW} ]; then
+	    VPNGW=`netstat -nr | grep ^0/1 | grep -P 'tun|tap' | head -1 | awk '{print $2}'`
+	    #echo OVPN:${VPNGW}
+	fi
 	#noneovpn
     if [ -z ${VPNGW} ]; then
 		VPNGW=`netstat -nr | grep ^default | grep ppp | head -1 | awk '{print $2}'`
@@ -15,6 +24,10 @@ export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local
 	#get oldgw	
     OLDGW=`netstat -nr | grep -P '^default|^0/1' | grep -v $(echo ${VPNGW}) | head -1 | awk '{print $2}'`
     #echo OLD:${OLDGW}
+
+#Set Gateway 
+#	OLDGW=
+#	VPNGW=	
 
 #log		
 	echo "${OLDGW}" > /tmp/vpn_oldgw
