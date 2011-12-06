@@ -1,29 +1,31 @@
-#!/bin/sh
-export PATH="/bin:/sbin:/usr/sbin:/usr/bin"
+#!/bin/bash
+export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/sbin
 
-OLDGW=`netstat -nr | grep -P '^default' | head -1 | grep -Po '\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}'`
-# ppp vpn
-VPNGW=`netstat -nr | grep -P '^default|^0/1' | grep -v $(echo ${OLDGW}) | grep 'ppp' | grep -Po '\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}'`
-# openvpn
-if [ -z ${VPNGW} ]; then
-    VPNGW=`netstat -nr | grep -P '^default|^0/1' | grep -v $(echo ${OLDGW}) | grep 'tun' | grep -Po '\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}'`
-fi
+#get gw
+	#get oldgw	
+		OLDGW=`netstat -nr | grep ^default |grep en |awk '{print $2}'`
+		#echo $OLDGW
+	#noneovpn
+		VPNGW=`netstat -nr | grep ^default |grep ppp|awk '{print $2}'`
+		#echo $VPNGW
+	#ovpn
+		if [ -z $VPNGW ]; then
+			VPNGW=`ifconfig | grep -A 3 tun|grep netmask | awk '{print $4}'`
+			#echo $VPNGW
+		fi
 
-if [ -z ${OLDGW} ] || [ -z ${VPNGW} ]; then
-    print 'error'
-    exit 1
-fi
-
-echo "${OLDGW}" > /tmp/pptp_oldgw
-echo "${VPNGW}" > /tmp/pptp_vpngw
+#log		
+	echo "${OLDGW}" > /tmp/vpn_oldgw
+	echo "${VPNGW}" > /tmp/vpn_vpngw
 
 dscacheutil -flushcache
-#ipup
 
+#ipup
 
 #dns 202.45.84.58
 route add -host 202.45.84.58 "${VPNGW}"
 #dnsend
+
 #gfw
 ##### begin batch route #####
 # Google DNS and OpenDNS
@@ -1244,7 +1246,6 @@ route add -net 98.136.92.0/24 "${VPNGW}"
 ##### end batch route #####
 #gfwend
 
-
 #custom
 
 #github
@@ -1314,3 +1315,5 @@ route delete 0/1 "${VPNGW}"
 route delete 128.0/1 "${VPNGW}"
 route add default "${OLDGW}"
 #end
+
+
