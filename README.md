@@ -3,7 +3,7 @@
 
 #Beta
 
-###![Install page](http://xream.github.com/iGV/install.html) updates as well.
+###[Install page](http://xream.github.com/iGV/install.html) updates as well.
 
 12-08
 
