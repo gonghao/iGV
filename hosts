@@ -1,6 +1,6 @@
 #from https://smarthosts.googlecode.com/svn/trunk/hosts
 #changes
-
+#delete junks
 #UPDATE:11-12-06 23:15
 
 127.0.0.1	localhost
@@ -425,74 +425,7 @@
 202.175.5.121	developer.apple.com
 #苹果服务加速 结束
 
-#Twitter 开始
-199.59.149.210	t.co
-199.59.149.243	upload.twitter.com
-199.59.149.243	pic.twitter.com
-199.59.149.243	oauth.twitter.com
-199.59.149.243	twitter.com
-199.59.149.243	www.twitter.com
-199.59.149.243	mobile.twitter.com
-199.59.149.243	api.twitter.com
-199.59.149.243	search.twitter.com
-199.59.148.139	userstream.twitter.com
-199.59.149.243	ssl.twitter.com
-199.59.149.243	status.twitter.com
-199.59.149.243	assets0.twitter.com
-199.59.149.243	assets1.twitter.com
-199.59.149.243	assets2.twitter.com
-199.59.149.243	assets3.twitter.com
-199.59.149.243	static.twitter.com
-184.29.36.124	platform.twitter.com
-219.76.10.138	platform0.twitter.com
-199.59.148.206	help.twitter.com
-199.59.148.206	support.twitter.com
-184.169.75.33	p.twimg.com
-184.169.75.33	si0.twimg.com
-184.169.75.33	si1.twimg.com
-184.169.75.33	si2.twimg.com
-184.169.75.33	si3.twimg.com
-184.169.75.33	si4.twimg.com
-184.169.75.33	si5.twimg.com
-199.59.148.243	scribe.twitter.com
-199.59.148.138	betastream.twitter.com
-184.106.20.99	posterous.com
-209.17.70.144	oi40.tinypic.com
-209.17.70.143	oi41.tinypic.com
-209.17.70.143	oi42.tinypic.com
-209.17.70.143	oi43.tinypic.com
-209.17.70.143	oi44.tinypic.com
-209.17.70.143	oi45.tinypic.com
-209.17.70.143	oi46.tinypic.com
-209.17.70.143	oi47.tinypic.com
-209.17.70.143	oi48.tinypic.com
-209.17.70.143	oi49.tinypic.com
-209.17.70.143	oi50.tinypic.com
-209.17.70.144	oi51.tinypic.com
-209.17.70.144	oi52.tinypic.com
-209.17.70.144	oi53.tinypic.com
-209.17.70.144	oi54.tinypic.com
-209.17.70.144	oi55.tinypic.com
-209.17.70.144	oi56.tinypic.com
-174.36.58.234	twitpic.com
-174.36.58.234	www.twitpic.com
-174.36.46.32	web7.twitpic.com
-174.36.58.204	web1.twitpic.com
-174.36.58.224	web2.twitpic.com
-174.36.58.200	web3.twitpic.com
-174.37.33.184	web4.twitpic.com
-174.37.75.16	web5.twitpic.com
-174.36.35.60	web6.twitpic.com
-66.228.120.92	web8.twitpic.com
-74.86.100.160	web9.twitpic.com
-74.86.87.236	web10.twitpic.com
-69.58.188.34	bitly.com
-208.94.0.61	a.yfrog.com
-208.94.0.61	yfrog.com
-208.94.0.61	www.yfrog.com
-199.59.149.208	scribe.twitter.com
-208.87.33.151	api.mobilepicture.com
-#Twitter 结束
+
 
 #Facebook 开始
 66.220.149.25	facebook.com
@@ -574,23 +507,6 @@
 204.0.5.34	us.js2.yimg.com
 #Flickr 结束
 
-#adobe激活服务器屏蔽 开始
-0.0.0.0	3dns-2.adobe.com
-0.0.0.0	3dns-3.adobe.com
-0.0.0.0	activate.adobe.com
-0.0.0.0	activate-sea.adobe.com
-0.0.0.0	activate-sjc0.adobe.com
-0.0.0.0	adobe-dns.adobe.com
-0.0.0.0	adobe-dns-2.adobe.com
-0.0.0.0	adobe-dns-3.adobe.com
-0.0.0.0	ereg.adobe.com
-0.0.0.0	hl2rcv.adobe.com
-0.0.0.0	practivate.adobe.com
-0.0.0.0	wip3.adobe.com
-0.0.0.0	activate.wip3.adobe.com
-0.0.0.0	ereg.wip3.adobe.com
-0.0.0.0	wwis-dubc1-vip60.adobe.com
-#adobe激活服务器屏蔽 结束
 
 #维基百科 开始
 208.80.152.201	wikipedia.org
