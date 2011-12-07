@@ -1,45 +1,14 @@
 #!/bin/bash
 export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/sbin
 
-#get gw
-	#noneovpn
-		VPNGW=`netstat -nr | grep ^default |grep ppp|awk '{print $2}'`
-		#echo ${VPNGW}
-	#ovpn tun
-		if [ -z ${VPNGW} ]; then
-			VPNGW=`ifconfig | grep -A 3 tun|grep netmask | awk '{print $4}'`
-			#echo ${VPNGW}
-		fi
-	#ovpn tap
-	if [ -z ${VPNGW} ]; then
-	    VPNGW=`netstat -nr | grep ^0/1 | grep -P 'tun|tap' | head -1 | awk '{print $2}'`
-	    #echo OVPN:${VPNGW}
-	fi
-	#noneovpn
-    if [ -z ${VPNGW} ]; then
-		VPNGW=`netstat -nr | grep ^default | grep ppp | head -1 | awk '{print $2}'`
-		#echo VPN:${VPNGW}
-    fi
-
-	#get oldgw	
-    OLDGW=`netstat -nr | grep -P '^default|^0/1' | grep -v $(echo ${VPNGW}) | head -1 | awk '{print $2}'`
-    #echo OLD:${OLDGW}
-
-#Set Gateway 
-#	OLDGW=
-#	VPNGW=	
-
+#get gateway
+source /usr/local/etc/gateway.sh
+	
 #log		
 	echo "${OLDGW}" > /tmp/vpn_oldgw
 	echo "${VPNGW}" > /tmp/vpn_vpngw
 
 dscacheutil -flushcache
-
-#ipup
-
-#dns 202.45.84.58
-route add -host 202.45.84.58 "${VPNGW}"
-#dnsend
 
 #gfw
 ##### begin batch route #####
@@ -1259,16 +1228,14 @@ route add -net 97.74.215.0/24 "${VPNGW}"
 route add -net 98.129.229.0/24 "${VPNGW}"
 route add -net 98.136.92.0/24 "${VPNGW}"
 ##### end batch route #####
-#gfwend
 
 #custom
-
+#dns
+route add -host 202.45.84.58 "${VPNGW}"
 #github
 #route add -net 207.97.227.224/27 "${VPNGW}"
-
 #vbird.dic.ksu.edu.tw
 route add -net 120.0.0.0/8 "${VPNGW}"
-
 #tumblr
 route add -net 174.120.0.0/14 "${VPNGW}"
 route add -net 50.22.0.0/15 "${VPNGW}"
@@ -1276,11 +1243,9 @@ route add -net 72.32.231.8 "${VPNGW}"
 route add -net 72.21.192.0/19 "${VPNGW}"
 route add -net 174.120.0.0/14 "${VPNGW}"
 route add -net 184.172.0.0/15 "${VPNGW}"
-
 #The current Amazon EC2 public address ranges are
 route add -net 207.171.160.0/19 "${VPNGW}"
 route add -net 216.137.32.0/19 "${VPNGW}"
-
 route add -net 72.44.32.0/19 "${VPNGW}"
 route add -net 67.202.0.0/18 "${VPNGW}"
 route add -net 75.101.128.0/17 "${VPNGW}"
@@ -1315,20 +1280,54 @@ route add -net 46.51.224.0/19 "${VPNGW}"
 route add -net 176.32.64.0/19 "${VPNGW}"
 route add -net 103.4.8.0/21 "${VPNGW}"
 route add -net 176.34.0.0/18 "${VPNGW}"
-
 #www.mediaatelier.com
 route add -net 194.126.200.0/24 "${VPNGW}"
 #xiaolife.com
 route add -net 69.163.128.0/17 "${VPNGW}"
 
-#customend
+#exroute
+route delete -host 174.129.27.11 "${VPNGW}"
+route delete -host 174.129.27.15 "${VPNGW}"
+route delete -host 174.129.27.18 "${VPNGW}"
+route delete -host 174.129.27.49 "${VPNGW}"
+route delete -host 174.129.27.57 "${VPNGW}"
+route delete -host 174.129.27.71 "${VPNGW}"
+route delete -host 174.129.27.85 "${VPNGW}"
+route delete -host 174.129.27.99 "${VPNGW}"
+route delete -host 174.129.27.109 "${VPNGW}"
+route delete -host 174.129.27.120 "${VPNGW}"
+route delete -host 174.129.27.131 "${VPNGW}"
+route delete -host 174.129.27.133 "${VPNGW}"
+route delete -host 174.129.27.160 "${VPNGW}"
+route delete -host 174.129.27.191 "${VPNGW}"
+route delete -host 174.129.27.215 "${VPNGW}"
+route delete -host 174.129.27.216 "${VPNGW}"
+route delete -host 174.129.27.218 "${VPNGW}"
+route delete -host 174.129.27.220 "${VPNGW}"
+route delete -host 174.129.27.236 "${VPNGW}"
+
+route add -host 174.129.27.11 "${OLDGW}"
+route add -host 174.129.27.15 "${OLDGW}"
+route add -host 174.129.27.18 "${OLDGW}"
+route add -host 174.129.27.49 "${OLDGW}"
+route add -host 174.129.27.57 "${OLDGW}"
+route add -host 174.129.27.71 "${OLDGW}"
+route add -host 174.129.27.85 "${OLDGW}"
+route add -host 174.129.27.99 "${OLDGW}"
+route add -host 174.129.27.109 "${OLDGW}"
+route add -host 174.129.27.120 "${OLDGW}"
+route add -host 174.129.27.131 "${OLDGW}"
+route add -host 174.129.27.133 "${OLDGW}"
+route add -host 174.129.27.160 "${OLDGW}"
+route add -host 174.129.27.191 "${OLDGW}"
+route add -host 174.129.27.215 "${OLDGW}"
+route add -host 174.129.27.216 "${OLDGW}"
+route add -host 174.129.27.218 "${OLDGW}"
+route add -host 174.129.27.220 "${OLDGW}"
+route add -host 174.129.27.236 "${OLDGW}"
 
 #change default gw
 route delete default "${VPNGW}"
-#openvpn default gw
 route delete 0/1 "${VPNGW}"
 route delete 128.0/1 "${VPNGW}"
 route add default "${OLDGW}"
-#end
-
-

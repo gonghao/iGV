@@ -11,11 +11,6 @@ fi
 
 OLDGW=`cat /tmp/vpn_oldgw`
 VPNGW=`cat /tmp/vpn_vpngw`
-#ipdown
-
-#dns 202.45.84.58
-route delete -host 202.45.84.58 "${VPNGW}"
-#dnsend
 
 #gfw
 ##### begin batch route #####
@@ -1235,16 +1230,14 @@ route delete -net 97.74.215.0/24 "${VPNGW}"
 route delete -net 98.129.229.0/24 "${VPNGW}"
 route delete -net 98.136.92.0/24 "${VPNGW}"
 ##### end batch route #####
-#gfwend
 
 #custom
-
+#dns
+route delete -host 202.45.84.58 "${VPNGW}"
 #github
 #route delete -net 207.97.227.224/27 "${VPNGW}"
-
 #vbird.dic.ksu.edu.tw
 route delete -net 120.0.0.0/8 "${VPNGW}"
-
 #tumblr
 route delete -net 174.120.0.0/14 "${VPNGW}"
 route delete -net 50.22.0.0/15 "${VPNGW}"
@@ -1252,11 +1245,9 @@ route delete -net 72.32.231.8 "${VPNGW}"
 route delete -net 72.21.192.0/19 "${VPNGW}"
 route delete -net 174.120.0.0/14 "${VPNGW}"
 route delete -net 184.172.0.0/15 "${VPNGW}"
-
 #The current Amazon EC2 public deleteress ranges are
 route delete -net 207.171.160.0/19 "${VPNGW}"
 route delete -net 216.137.32.0/19 "${VPNGW}"
-
 route delete -net 72.44.32.0/19 "${VPNGW}"
 route delete -net 67.202.0.0/18 "${VPNGW}"
 route delete -net 75.101.128.0/17 "${VPNGW}"
@@ -1291,21 +1282,58 @@ route delete -net 46.51.224.0/19 "${VPNGW}"
 route delete -net 176.32.64.0/19 "${VPNGW}"
 route delete -net 103.4.8.0/21 "${VPNGW}"
 route delete -net 176.34.0.0/18 "${VPNGW}"
-
 #www.mediaatelier.com
 route delete -net 194.126.200.0/24 "${VPNGW}"
 #xiaolife.com
 route delete -net 69.163.128.0/17 "${VPNGW}"
-#twitpic
-route delete -net 174.36.0.0/15 "${VPNGW}"
-#customend
 
+#exroute
+route delete -host 174.129.27.11 "${VPNGW}"
+route delete -host 174.129.27.15 "${VPNGW}"
+route delete -host 174.129.27.18 "${VPNGW}"
+route delete -host 174.129.27.49 "${VPNGW}"
+route delete -host 174.129.27.57 "${VPNGW}"
+route delete -host 174.129.27.71 "${VPNGW}"
+route delete -host 174.129.27.85 "${VPNGW}"
+route delete -host 174.129.27.99 "${VPNGW}"
+route delete -host 174.129.27.109 "${VPNGW}"
+route delete -host 174.129.27.120 "${VPNGW}"
+route delete -host 174.129.27.131 "${VPNGW}"
+route delete -host 174.129.27.133 "${VPNGW}"
+route delete -host 174.129.27.160 "${VPNGW}"
+route delete -host 174.129.27.191 "${VPNGW}"
+route delete -host 174.129.27.215 "${VPNGW}"
+route delete -host 174.129.27.216 "${VPNGW}"
+route delete -host 174.129.27.218 "${VPNGW}"
+route delete -host 174.129.27.220 "${VPNGW}"
+route delete -host 174.129.27.236 "${VPNGW}"
 
+route delete -host 174.129.27.11 "${OLDGW}"
+route delete -host 174.129.27.15 "${OLDGW}"
+route delete -host 174.129.27.18 "${OLDGW}"
+route delete -host 174.129.27.49 "${OLDGW}"
+route delete -host 174.129.27.57 "${OLDGW}"
+route delete -host 174.129.27.71 "${OLDGW}"
+route delete -host 174.129.27.85 "${OLDGW}"
+route delete -host 174.129.27.99 "${OLDGW}"
+route delete -host 174.129.27.109 "${OLDGW}"
+route delete -host 174.129.27.120 "${OLDGW}"
+route delete -host 174.129.27.131 "${OLDGW}"
+route delete -host 174.129.27.133 "${OLDGW}"
+route delete -host 174.129.27.160 "${OLDGW}"
+route delete -host 174.129.27.191 "${OLDGW}"
+route delete -host 174.129.27.215 "${OLDGW}"
+route delete -host 174.129.27.216 "${OLDGW}"
+route delete -host 174.129.27.218 "${OLDGW}"
+route delete -host 174.129.27.220 "${OLDGW}"
+route delete -host 174.129.27.236 "${OLDGW}"
+
+#change default gw
+route delete default "${VPNGW}"
+route delete 0/1 "${VPNGW}"
+route delete 128.0/1 "${VPNGW}"
 route add default "${OLDGW}"
+
 rm -f /tmp/vpn_oldgw
 rm -f /tmp/vpn_vpngw
 dscacheutil -flushcache
-
-#end
-
-

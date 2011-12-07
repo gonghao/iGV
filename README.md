@@ -1,9 +1,9 @@
->#[GitHub Page](http://xream.github.com/iGV/).
+>#[Click Here to Visit Main Page](http://xream.github.com/iGV/).
 
 
 #Beta
 
-	Install page updates as well.
+###Install page updates as well.
 
 2011-12-07
 
