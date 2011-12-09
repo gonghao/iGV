@@ -7,6 +7,12 @@
 
 2011-12-09
 
+13:10
+
+Change conf of Google services
+
+fix iCloud/iTunes ssl error
+
 Rewrite scripts
 
 OpenVPN support improved.
@@ -17,27 +23,6 @@ Apps like Filpboard won't cause network reset!
 
 Speed up Tumblr!
 
-2011-12-08
-
-Remove hosts
-
-Rewrite ip-up/ip-down
-
-New pages,README
-
-OpenVPN(beta)
-
-Easy to manage configuration files of dnsmasq(beta)
-
-Speedup Amazon EC2(beta)
-
-2011-12-07
-
-OpenVPN support
-
-Easy to manage configuration files of dnsmasq
-
-Speed up Google services
 
 #In Process
 

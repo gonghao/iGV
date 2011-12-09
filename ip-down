@@ -1334,6 +1334,8 @@ export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local
 	route delete -host 174.129.27.218 $oldgw
 	route delete -host 174.129.27.220 $oldgw
 	route delete -host 174.129.27.236 $oldgw
+#jaips.com
+	route delete -host 173.201.96.128 $vpngw	
 #itunes
 	route delete -host 82.166.201.138 $vpngw
 	route delete -host 66.235.133.14 $vpngw
