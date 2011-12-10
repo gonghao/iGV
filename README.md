@@ -10,6 +10,10 @@
 
 2011-12-10
 
+18:06
+
+fix vimeo
+
 09:08
 
 Fix Purchased/Redeem/Account/Push problems of Apple services.

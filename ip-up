@@ -147,6 +147,7 @@ export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local
 	# udn.com
 	route add -host 210.243.0.0/16 $vpngw
 	# for vimeo
+	route add -net 210.0.146.0/24 $vpngw
 	# av.vimeo.com
 	#route add -net 117.104.138.0/24 $vpngw
 	#route add -net 24.143.203.0/24 $vpngw
