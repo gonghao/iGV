@@ -5,7 +5,33 @@
 
 ###[Install page](http://xream.github.com/iGV/install.html) updates as well.
 
+
+
+
+2011-12-10
+
+09:08
+
+Fix Purchased/Redeem/Account/Push problems of Apple services.
+
+Add log option in dnsmasq.conf.
+
+Fix
+
+06:33
+
+Speed up **ALL** Apple services (beta)
+
+Use V2EX to speed up Google services.
+
+Fix "link" problem of gateway.sh
+
+
 2011-12-09
+
+18:08
+
+fix buy.itunes.apple.com
 
 13:10
 

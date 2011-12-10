@@ -3,7 +3,7 @@ export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local
 #get gw
 	oldgw=`cat /tmp/vpn_oldgw`
 	vpngw=`cat /tmp/vpn_vpngw`
-#gfw
+
 	##### begin batch route #####
 	# Google DNS and OpenDNS
 	route delete -host 8.8.8.8 $vpngw
@@ -1068,8 +1068,9 @@ export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local
 	route delete -net 195.189.143.0/24 $vpngw
 	route delete -net 198.62.75.0/24 $vpngw
 	route delete -net 199.27.135.0/24 $vpngw
-	route delete -net 199.47.216.0/24 $vpngw
-	route delete -net 199.47.217.0/24 $vpngw
+	#dropbox_test
+	#route delete -net 199.47.216.0/24 $vpngw
+	#route delete -net 199.47.217.0/24 $vpngw
 	route delete -net 199.59.148.0/24 $vpngw
 	route delete -net 199.59.149.0/24 $vpngw
 	route delete -net 199.66.238.0/24 $vpngw
@@ -1233,10 +1234,9 @@ export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local
 	route delete -net 98.139.126.0/24 $vpngw
 	route delete -net 98.142.98.0/24 $vpngw
 	##### end batch route #####
-#custom
-	#custom
 	#dns
 	route delete -host 202.45.84.58 $vpngw
+	route delete -host 106.187.34.91 $vpngw
 	#github
 	#route delete -net 207.97.227.224/27 $vpngw
 	#vbird.dic.ksu.edu.tw
@@ -1254,13 +1254,15 @@ export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local
 	route delete -net 72.44.32.0/19 $vpngw
 	route delete -net 67.202.0.0/18 $vpngw
 	route delete -net 75.101.128.0/17 $vpngw
-	route delete -net 174.129.0.0/16 $vpngw
+	#dropbox_test
+	#route delete -net 174.129.0.0/16 $vpngw
 	route delete -net 204.236.192.0/18 $vpngw
 	route delete -net 184.73.0.0/16 $vpngw
 	route delete -net 184.72.128.0/17 $vpngw
 	route delete -net 184.72.64.0/18 $vpngw
 	route delete -net 50.16.0.0/15 $vpngw
-	route delete -net 50.19.0.0/16 $vpngw
+	#dropbox_test
+	#route delete -net 50.19.0.0/16 $vpngw
 	route delete -net 107.20.0.0/15 $vpngw
 	route delete -net 107.22.0.0/16 $vpngw
 	route delete -net 23.20.0.0/14 $vpngw
@@ -1290,55 +1292,21 @@ export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local
 	#xiaolife.com
 	route delete -net 69.163.128.0/17 $vpngw
 
-	#exroute
-	#tumblr
-	route delete -host 174.121.194.34 $vpngw
-	route delete -host 174.121.194.34 $oldgw
-	
-	route delete -host 174.129.27.11 $vpngw
-	route delete -host 174.129.27.15 $vpngw
-	route delete -host 174.129.27.18 $vpngw
-	route delete -host 174.129.27.49 $vpngw
-	route delete -host 174.129.27.57 $vpngw
-	route delete -host 174.129.27.71 $vpngw
-	route delete -host 174.129.27.85 $vpngw
-	route delete -host 174.129.27.99 $vpngw
-	route delete -host 174.129.27.109 $vpngw
-	route delete -host 174.129.27.120 $vpngw
-	route delete -host 174.129.27.131 $vpngw
-	route delete -host 174.129.27.133 $vpngw
-	route delete -host 174.129.27.160 $vpngw
-	route delete -host 174.129.27.191 $vpngw
-	route delete -host 174.129.27.215 $vpngw
-	route delete -host 174.129.27.216 $vpngw
-	route delete -host 174.129.27.218 $vpngw
-	route delete -host 174.129.27.220 $vpngw
-	route delete -host 174.129.27.236 $vpngw
 
-	route delete -host 174.129.27.11 $oldgw
-	route delete -host 174.129.27.15 $oldgw
-	route delete -host 174.129.27.18 $oldgw
-	route delete -host 174.129.27.49 $oldgw
-	route delete -host 174.129.27.57 $oldgw
-	route delete -host 174.129.27.71 $oldgw
-	route delete -host 174.129.27.85 $oldgw
-	route delete -host 174.129.27.99 $oldgw
-	route delete -host 174.129.27.109 $oldgw
-	route delete -host 174.129.27.120 $oldgw
-	route delete -host 174.129.27.131 $oldgw
-	route delete -host 174.129.27.133 $oldgw
-	route delete -host 174.129.27.160 $oldgw
-	route delete -host 174.129.27.191 $oldgw
-	route delete -host 174.129.27.215 $oldgw
-	route delete -host 174.129.27.216 $oldgw
-	route delete -host 174.129.27.218 $oldgw
-	route delete -host 174.129.27.220 $oldgw
-	route delete -host 174.129.27.236 $oldgw
-#jaips.com
-	route delete -host 173.201.96.128 $vpngw	
-#itunes
-	route delete -host 82.166.201.138 $vpngw
-	route delete -host 66.235.133.14 $vpngw
+	route delete -host 173.201.96.128 $vpngw
+
+
+	#itunes
+	route delete -net 206.160.170.17 $vpngw
+	route delete -host 66.235.128.0/19 $vpngw
+	route delete -host 63.140.56.117 $vpngw
+	#d.pr
+		route delete -host 50.112.123.64 $vpngw
+		route delete -host 50.112.122.158 $vpngw
+		route delete -net 207.171.160.0/19 $vpngw
+	#api.longurl.org
+		route delete -host 208.94.145.108 $vpngwv
+
 #change default gw
 	#route delete 0/1 $vpngw
 	#route delete 128.0/1 $vpngw

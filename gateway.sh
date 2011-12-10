@@ -1,9 +1,9 @@
 #!/bin/bash
 export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/sbin
 #getgw
-firstgw=`netstat -nr|grep -A1 Gate|egrep -v "Gate|lo"|awk '{print $2}'`
+firstgw=`netstat -nr|grep -A1 Gate|egrep -v "Gate|lo|link"|awk '{print $2}'`
 secondgw=`netstat -nr|grep -A2 $firstgw|egrep -v "$firstgw|lo"|awk '{print $2}'|head -1`
-netif=`netstat -nr|grep -A1 Netif|egrep -v "Netif|lo"|awk '{print $6}'`
+netif=`netstat -nr|grep -A1 Netif|egrep -v "Netif|lo|link"|awk '{print $6}'`
 if [[ $netif == e* ]]; then
 	oldgw=$firstgw
 	vpngw=$secondgw

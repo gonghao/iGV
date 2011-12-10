@@ -52,6 +52,8 @@ export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local
 	# for Google
 	route add -net 72.14.192.0/18 $vpngw
 	route add -net 74.125.0.0/16 $vpngw
+	#gmail_test
+	route delete -net 74.125.71.0/24 $vpngw
 	# Gmail
 	route add -net 209.85.175.0/24 $vpngw
 	# static.cache.l.google.com in Taiwan
@@ -1072,8 +1074,9 @@ export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local
 	route add -net 195.189.143.0/24 $vpngw
 	route add -net 198.62.75.0/24 $vpngw
 	route add -net 199.27.135.0/24 $vpngw
-	route add -net 199.47.216.0/24 $vpngw
-	route add -net 199.47.217.0/24 $vpngw
+	#dropbox_test
+	#route add -net 199.47.216.0/24 $vpngw
+	#route add -net 199.47.217.0/24 $vpngw
 	route add -net 199.59.148.0/24 $vpngw
 	route add -net 199.59.149.0/24 $vpngw
 	route add -net 199.66.238.0/24 $vpngw
@@ -1240,6 +1243,7 @@ export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local
 #custom
 	#dns
 	route add -host 202.45.84.58 $vpngw
+	route add -host 106.187.34.91 $vpngw
 	#github
 	#route add -net 207.97.227.224/27 $vpngw
 	#vbird.dic.ksu.edu.tw
@@ -1257,13 +1261,15 @@ export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local
 	route add -net 72.44.32.0/19 $vpngw
 	route add -net 67.202.0.0/18 $vpngw
 	route add -net 75.101.128.0/17 $vpngw
-	route add -net 174.129.0.0/16 $vpngw
+	#dropbox_test
+	#route add -net 174.129.0.0/16 $vpngw
 	route add -net 204.236.192.0/18 $vpngw
 	route add -net 184.73.0.0/16 $vpngw
 	route add -net 184.72.128.0/17 $vpngw
 	route add -net 184.72.64.0/18 $vpngw
 	route add -net 50.16.0.0/15 $vpngw
-	route add -net 50.19.0.0/16 $vpngw
+	#dropbox_test
+	#route add -net 50.19.0.0/16 $vpngw
 	route add -net 107.20.0.0/15 $vpngw
 	route add -net 107.22.0.0/16 $vpngw
 	route add -net 23.20.0.0/14 $vpngw
@@ -1295,56 +1301,50 @@ export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local
 
 	#exroute
 	#tumblr
-	route delete -host 174.121.194.34 $vpngw
-	route add -host 174.121.194.34 $oldgw
-	
-	route delete -host 174.129.27.11 $vpngw
-	route delete -host 174.129.27.15 $vpngw
-	route delete -host 174.129.27.18 $vpngw
-	route delete -host 174.129.27.49 $vpngw
-	route delete -host 174.129.27.57 $vpngw
-	route delete -host 174.129.27.71 $vpngw
-	route delete -host 174.129.27.85 $vpngw
-	route delete -host 174.129.27.99 $vpngw
-	route delete -host 174.129.27.109 $vpngw
-	route delete -host 174.129.27.120 $vpngw
-	route delete -host 174.129.27.131 $vpngw
-	route delete -host 174.129.27.133 $vpngw
-	route delete -host 174.129.27.160 $vpngw
-	route delete -host 174.129.27.191 $vpngw
-	route delete -host 174.129.27.215 $vpngw
-	route delete -host 174.129.27.216 $vpngw
-	route delete -host 174.129.27.218 $vpngw
-	route delete -host 174.129.27.220 $vpngw
-	route delete -host 174.129.27.236 $vpngw
+	#tumblr
+	#route add -net 174.120.0.0/14 $vpngw
+	#route add -net 50.22.0.0/15 $vpngw
+	#route add -net 72.32.231.8 $vpngw
+	#route add -net 72.21.192.0/19 $vpngw
+	#route add -net 174.120.0.0/14 $vpngw
+	#route add -net 184.172.0.0/15 $vpngw
+	#route delete -host 174.121.194.34 $vpngw
+	#test 	route add -net 174.129.0.0/16 $vpngw
+	#route delete -host 174.129.27.11 $vpngw
+	#route delete -host 174.129.27.15 $vpngw
+	#route delete -host 174.129.27.18 $vpngw
+	#route delete -host 174.129.27.49 $vpngw
+	#route delete -host 174.129.27.57 $vpngw
+	#route delete -host 174.129.27.71 $vpngw
+	#route delete -host 174.129.27.85 $vpngw
+	#route delete -host 174.129.27.99 $vpngw
+	#route delete -host 174.129.27.109 $vpngw
+	#route delete -host 174.129.27.120 $vpngw
+	#route delete -host 174.129.27.131 $vpngw
+	#route delete -host 174.129.27.133 $vpngw
+	#route delete -host 174.129.27.160 $vpngw
+	#route delete -host 174.129.27.191 $vpngw
+	#route delete -host 174.129.27.215 $vpngw
+	#route delete -host 174.129.27.216 $vpngw
+	#route delete -host 174.129.27.218 $vpngw
+	#route delete -host 174.129.27.220 $vpngw
+	#route delete -host 174.129.27.236 $vpngw
 
-	route add -host 174.129.27.11 $oldgw
-	route add -host 174.129.27.15 $oldgw
-	route add -host 174.129.27.18 $oldgw
-	route add -host 174.129.27.49 $oldgw
-	route add -host 174.129.27.57 $oldgw
-	route add -host 174.129.27.71 $oldgw
-	route add -host 174.129.27.85 $oldgw
-	route add -host 174.129.27.99 $oldgw
-	route add -host 174.129.27.109 $oldgw
-	route add -host 174.129.27.120 $oldgw
-	route add -host 174.129.27.131 $oldgw
-	route add -host 174.129.27.133 $oldgw
-	route add -host 174.129.27.160 $oldgw
-	route add -host 174.129.27.191 $oldgw
-	route add -host 174.129.27.215 $oldgw
-	route add -host 174.129.27.216 $oldgw
-	route add -host 174.129.27.218 $oldgw
-	route add -host 174.129.27.220 $oldgw
-	route add -host 174.129.27.236 $oldgw
 #jaips.com
 	route add -host 173.201.96.128 $vpngw
-#itunes
-	route add -host 82.166.201.138 $vpngw
-	route add -host 66.235.133.14 $vpngw
+	#itunes
+		route add -net 206.160.170.17 $vpngw
+		route add -host 66.235.128.0/19 $vpngw
+		route add -host 63.140.56.117 $vpngw
+	#d.pr
+		route add -host 50.112.123.64 $vpngw
+		route add -host 50.112.122.158 $vpngw
+		route add -net 207.171.160.0/19 $vpngw
+	#api.longurl.org
+		route add -host 208.94.145.108 $vpngwv
 #change default gw
-	#route delete 0/1 $vpngw
-	#route delete 128.0/1 $vpngw
+	route delete 0/1 $vpngw
+	route delete 128.0/1 $vpngw
 	route delete default $vpngw
 	route delete default $oldgw
 	route add default $oldgw 
