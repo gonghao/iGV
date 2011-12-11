@@ -1,12 +1,15 @@
 >#[Click Here to Visit Main Page](http://xream.github.com/iGV/).
 
 
-#Beta
+#Stable with PPTP/L2TP
 
 ###[Install page](http://xream.github.com/iGV/install.html) updates as well.
 
+[Beta branch](https://github.com/xream/iGV/tree/beta)
 
+2011-12-12
 
+Beta branch published.
 
 2011-12-10
 
