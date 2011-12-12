@@ -1343,6 +1343,22 @@ export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local
 		route add 207.171.160.0/19 $vpngw
 	#api.longurl.org
 		route add 208.94.145.108 $vpngwv
+		#cydiahelp.com
+		#cydiahelp1.home11.netdna-cdn.com
+		route add 67.201.31.177 $vpngw
+		#track.cj.akadns.net
+		#widgets.amung.us
+		route add 173.192.225.170 $vpngw
+		#a743.g.akamai.net
+		route add 210.0.146.11 $vpngw
+		route add 210.0.146.24 $vpngw
+		#a749.g.akamai.net
+		route add 210.0.146.40 $vpngw
+		route add 210.0.146.18 $vpngw
+		#a1725.l.akamai.net
+		route add 210.0.146.32 $vpngw
+		route add 210.0.146.9 $vpngw
+		
 #change default gw
 	route delete 0/1 $vpngw
 	route delete 128.0/1 $vpngw
