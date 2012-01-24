@@ -67,3 +67,5 @@ route add 68.232.32.0/20 $vpngw
 route add 208.94.0.0/22 $vpngw
 #wallbase.cc
 route add 46.105.0.0/16 $vpngw
+#twitpic.com
+route add 50.22.0.0/15 $vpngw

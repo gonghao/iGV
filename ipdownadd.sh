@@ -67,3 +67,5 @@ route delete 68.232.32.0/20 $vpngw
 route delete 208.94.0.0/22 $vpngw
 #wallbase.cc
 route delete 46.105.0.0/16 $vpngw
+#twitpic.com
+route delete 50.22.0.0/15 $vpngw
