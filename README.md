@@ -1,10 +1,10 @@
-#GitHub Page
+#Wiki
 
-[Main Page](http://xream.github.com/iGV)
+[Home](https://github.com/xream/iGV/wiki)
 
 #Basic Installation
 
-[Basic Page](http://xream.github.com/iGV/basic)
+[Basic](https://github.com/xream/iGV/wiki/Basic)
 
 
 #Setup
