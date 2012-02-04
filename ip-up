@@ -6,11 +6,11 @@ export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local
 	#ovpn
     vpngw=`netstat -nr | grep ^0/1 | grep -P 'tun|tap' | head -1 | awk '{print $2}'`
 	#noneovpn
-    if [ -z ${VPNGW} ]; then
+    if [ -z ${vpngw} ]; then
 		vpngw=`netstat -nr | grep ^default | grep ppp | head -1 | awk '{print $2}'`
     fi
 	#get oldgw	
-    oldgw=`netstat -nr | grep -P '^default|^0/1' | grep -v $(echo ${VPNGW}) | head -1 | awk '{print $2}'`
+    oldgw=`netstat -nr | grep -P '^default|^0/1' | grep -v $(echo ${vpngw}) | head -1 | awk '{print $2}'`
 
 	#set the gateway below
 	#DO NOT uncomment them if nothing goes wrong!!!
