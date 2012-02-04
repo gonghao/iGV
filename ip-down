@@ -1,5 +1,14 @@
 #!/bin/bash
 export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/sbin
+
+if [ ! -e /tmp/vpn_oldgw ]; then
+    exit 0
+fi
+
+if [ ! -e /tmp/vpn_vpngw ]; then
+    exit 0
+fi
+
 #get gw
 	oldgw=`cat /tmp/vpn_oldgw`
 	vpngw=`cat /tmp/vpn_vpngw`

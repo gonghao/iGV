@@ -3,8 +3,15 @@ export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local
 #clean dns cache
 	dscacheutil -flushcache
 #get gateway
-	vpngw=`ifconfig |egrep -A1 "tun|tap|ppp"|tail -1|awk '{print $4}'`
-	oldgw=`netstat -nr|egrep "default.*en"|awk '{print $2}'`
+	#ovpn
+    vpngw=`netstat -nr | grep ^0/1 | grep -P 'tun|tap' | head -1 | awk '{print $2}'`
+	#noneovpn
+    if [ -z ${VPNGW} ]; then
+		vpngw=`netstat -nr | grep ^default | grep ppp | head -1 | awk '{print $2}'`
+    fi
+	#get oldgw	
+    oldgw=`netstat -nr | grep -P '^default|^0/1' | grep -v $(echo ${VPNGW}) | head -1 | awk '{print $2}'`
+
 	#set the gateway below
 	#DO NOT uncomment them if nothing goes wrong!!!
 	#oldgw=192.168.2.1
