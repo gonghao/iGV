@@ -22,7 +22,7 @@ route add 204.93.214.0/24 $vpngw
 # news.chinatimes.com
 route add 122.147.51.0/24 $vpngw
 # www.dropbox.com
-#route add 174.36.30.70 $vpngw
+#174.36.30.70
 route add 174.36.30.0/24 $vpngw
 # dl-web.dropbox.com
 route add 184.72.0.0/16 $vpngw
@@ -37,8 +37,8 @@ route add 23.21.167.0/24 $vpngw
 # wiki.dropbox.com
 route add 174.36.51.41 $vpngw
 # login.facebook.com
-#route add 66.220.147.0/24 $vpngw
-#route add 66.220.146.0/24 $vpngw
+#66.220.147.0/24
+#66.220.146.0/24
 # www.fotop.net
 route add 203.98.159.216 $vpngw
 # t0.fotop.net
@@ -74,8 +74,8 @@ route add 61.219.39.0/24 $vpngw
 # imgN.imageshack.us
 route add 208.75.252.0/24 $vpngw
 route add 208.94.3.0/24 $vpngw
-route add 38.99.77.0/24 $vpngw  
-route add 38.99.76.0/24 $vpngw  
+route add 38.99.77.0/24 $vpngw
+route add 38.99.76.0/24 $vpngw
 # s.pixfs.net
 route add 115.69.195.0/24 $vpngw
 route add 66.114.58.27 $vpngw
@@ -111,8 +111,8 @@ route add 114.111.71.0/24 $vpngw
 route add 114.110.55.0/24 $vpngw
 route add 114.110.51.0/24 $vpngw
 # tw.news.yahoo.com
-#route add 203.84.204.0/24 $vpngw
-#route add 203.84.197.0/24 $vpngw
+#203.84.204.0/24
+#203.84.197.0/24
 route add 203.84.0.0/16 $vpngw
 # beta.tw.news.yahoo.com
 route add 180.233.112.0/24 $vpngw
@@ -127,11 +127,11 @@ route add 98.137.53.0/24 $vpngw
 # yam.com
 route add 60.199.252.0/24 $vpngw
 # c.youtube.com
-#route add 74.125.164.0/24 $vpngw
+#74.125.164.0/24
 # ytimg.com
-#route add 74.125.6.0/24 $vpngw
-#route add 74.125.15.0/24 $vpngw
-#route add 74.125.19.0/24 $vpngw
+#74.125.6.0/24
+#74.125.15.0/24
+#74.125.19.0/24
 route add 209.85.229.0/24 $vpngw
 # for all youtube
 route add 66.102.0.0/20 $vpngw
@@ -142,12 +142,12 @@ route add 209.85.147.0/24 $vpngw
 route add 210.243.0.0/16 $vpngw
 # for vimeo
 # av.vimeo.com
-#route add 117.104.138.0/24 $vpngw
-#route add 24.143.203.0/24 $vpngw
-#route add 198.173.160.0/24 $vpngw
-#route add 198.173.161.0/24 $vpngw
-#route add 140.174.24.0/24 $vpngw
-#route add 140.174.25.0/24 $vpngw
+#117.104.138.0/24
+#24.143.203.0/24
+#198.173.160.0/24
+#198.173.161.0/24
+#140.174.24.0/24
+#140.174.25.0/24
 route add 64.145.89.0/24 $vpngw
 # player.vimeo.com
 route add 74.113.233.133 $vpngw
@@ -163,7 +163,7 @@ route add 66.235.126.0/24 $vpngw
 route add 63.235.28.0/24 $vpngw
 route add 61.213.189.0/24 $vpngw
 route add 60.254.175.0/24 $vpngw
-#route add 74.125.0.0/16 $vpngw
+#74.125.0.0/16
 route add 173.194.0.0/16 $vpngw
 route add 208.117.224.0/19 $vpngw
 route add 64.233.160.0/19 $vpngw
@@ -187,10 +187,10 @@ route add 103.11.100.3 $vpngw
 route add 106.187.35.46 $vpngw
 route add 106.187.37.184 $vpngw
 route add 106.187.42.102 $vpngw
-#route add 107.20.137.220 $vpngw
-#route add 107.20.154.48 $vpngw
-#route add 107.20.170.61 $vpngw
-#route add 107.20.171.210 $vpngw
+#107.20.137.220
+#107.20.154.48
+#107.20.170.61
+#107.20.171.210
 route add 107.21.92.173 $vpngw
 route add 107.22.178.183 $vpngw
 route add 107.22.218.45 $vpngw

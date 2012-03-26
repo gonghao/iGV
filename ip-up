@@ -19,8 +19,7 @@ export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local
 #log
 	echo $oldgw > /tmp/vpn_oldgw
 	echo $vpngw > /tmp/vpn_vpngw
-source /usr/local/etc/vpnup.sh
-source /usr/local/etc/ipupadd.sh
+source /usr/local/etc/blocked-up.sh
 #change default gw
 	route delete 0/1 $vpngw
 	route delete 128.0/1 $vpngw

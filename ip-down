@@ -12,8 +12,7 @@ fi
 #get gw
 	oldgw=`cat /tmp/vpn_oldgw`
 	vpngw=`cat /tmp/vpn_vpngw`
-source /usr/local/etc/vpndown.sh
-source /usr/local/etc/ipdownadd.sh
+source /usr/local/etc/blocked-down.sh
 #change default gw
 	route delete 0/1 $vpngw
 	route delete 128.0/1 $vpngw

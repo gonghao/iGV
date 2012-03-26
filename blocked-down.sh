@@ -1,4 +1,3 @@
-##### begin batch route #####
 # Google DNS and OpenDNS
 route delete 8.8.8.8 $vpngw
 route delete 8.8.4.4 $vpngw
@@ -23,7 +22,7 @@ route delete 204.93.214.0/24 $vpngw
 # news.chinatimes.com
 route delete 122.147.51.0/24 $vpngw
 # www.dropbox.com
-#route delete 174.36.30.70 $vpngw
+#174.36.30.70
 route delete 174.36.30.0/24 $vpngw
 # dl-web.dropbox.com
 route delete 184.72.0.0/16 $vpngw
@@ -38,8 +37,8 @@ route delete 23.21.167.0/24 $vpngw
 # wiki.dropbox.com
 route delete 174.36.51.41 $vpngw
 # login.facebook.com
-#route delete 66.220.147.0/24 $vpngw
-#route delete 66.220.146.0/24 $vpngw
+#66.220.147.0/24
+#66.220.146.0/24
 # www.fotop.net
 route delete 203.98.159.216 $vpngw
 # t0.fotop.net
@@ -75,8 +74,8 @@ route delete 61.219.39.0/24 $vpngw
 # imgN.imageshack.us
 route delete 208.75.252.0/24 $vpngw
 route delete 208.94.3.0/24 $vpngw
-route delete 38.99.77.0/24 $vpngw  
-route delete 38.99.76.0/24 $vpngw  
+route delete 38.99.77.0/24 $vpngw
+route delete 38.99.76.0/24 $vpngw
 # s.pixfs.net
 route delete 115.69.195.0/24 $vpngw
 route delete 66.114.58.27 $vpngw
@@ -112,8 +111,8 @@ route delete 114.111.71.0/24 $vpngw
 route delete 114.110.55.0/24 $vpngw
 route delete 114.110.51.0/24 $vpngw
 # tw.news.yahoo.com
-#route delete 203.84.204.0/24 $vpngw
-#route delete 203.84.197.0/24 $vpngw
+#203.84.204.0/24
+#203.84.197.0/24
 route delete 203.84.0.0/16 $vpngw
 # beta.tw.news.yahoo.com
 route delete 180.233.112.0/24 $vpngw
@@ -128,11 +127,11 @@ route delete 98.137.53.0/24 $vpngw
 # yam.com
 route delete 60.199.252.0/24 $vpngw
 # c.youtube.com
-#route delete 74.125.164.0/24 $vpngw
+#74.125.164.0/24
 # ytimg.com
-#route delete 74.125.6.0/24 $vpngw
-#route delete 74.125.15.0/24 $vpngw
-#route delete 74.125.19.0/24 $vpngw
+#74.125.6.0/24
+#74.125.15.0/24
+#74.125.19.0/24
 route delete 209.85.229.0/24 $vpngw
 # for all youtube
 route delete 66.102.0.0/20 $vpngw
@@ -143,12 +142,12 @@ route delete 209.85.147.0/24 $vpngw
 route delete 210.243.0.0/16 $vpngw
 # for vimeo
 # av.vimeo.com
-#route delete 117.104.138.0/24 $vpngw
-#route delete 24.143.203.0/24 $vpngw
-#route delete 198.173.160.0/24 $vpngw
-#route delete 198.173.161.0/24 $vpngw
-#route delete 140.174.24.0/24 $vpngw
-#route delete 140.174.25.0/24 $vpngw
+#117.104.138.0/24
+#24.143.203.0/24
+#198.173.160.0/24
+#198.173.161.0/24
+#140.174.24.0/24
+#140.174.25.0/24
 route delete 64.145.89.0/24 $vpngw
 # player.vimeo.com
 route delete 74.113.233.133 $vpngw
@@ -164,7 +163,7 @@ route delete 66.235.126.0/24 $vpngw
 route delete 63.235.28.0/24 $vpngw
 route delete 61.213.189.0/24 $vpngw
 route delete 60.254.175.0/24 $vpngw
-#route delete 74.125.0.0/16 $vpngw
+#74.125.0.0/16
 route delete 173.194.0.0/16 $vpngw
 route delete 208.117.224.0/19 $vpngw
 route delete 64.233.160.0/19 $vpngw
@@ -188,10 +187,10 @@ route delete 103.11.100.3 $vpngw
 route delete 106.187.35.46 $vpngw
 route delete 106.187.37.184 $vpngw
 route delete 106.187.42.102 $vpngw
-#route delete 107.20.137.220 $vpngw
-#route delete 107.20.154.48 $vpngw
-#route delete 107.20.170.61 $vpngw
-#route delete 107.20.171.210 $vpngw
+#107.20.137.220
+#107.20.154.48
+#107.20.170.61
+#107.20.171.210
 route delete 107.21.92.173 $vpngw
 route delete 107.22.178.183 $vpngw
 route delete 107.22.218.45 $vpngw
@@ -1225,4 +1224,72 @@ route delete 98.129.229.0/24 $vpngw
 route delete 98.136.92.0/24 $vpngw
 route delete 98.139.126.0/24 $vpngw
 route delete 98.142.98.0/24 $vpngw
-##### end batch route #####
+#fc2
+route delete 199.116.176.0/22 $vpngw
+route delete 208.71.104.0/22 $vpngw
+#metrics.apple.com
+route delete 66.235.128.0/19 $vpngw
+#securemetrics.apple.com
+route delete 63.140.32.0/19 $vpngw
+#ax.phobos.apple.com.edgesuite.net
+route delete 223.196.4.0/24 $vpngw
+#ax.init.itunes.apple.com
+route delete 63.97.127.0/24 $vpngw
+#my.itunes.apple.com
+#ax.itunes.apple.com
+#itunes.apple.com
+#itunes.apple.com.edgesuite.net
+#ax.su.itunes.apple.com
+#ax.search.itunes.apple.com
+#upload.twitter.com
+route delete 199.59.148.0/22 $vpngw
+#oauth.twitter.com
+#twitter.com
+#www.twitter.com
+#api.twitter.com
+#search.twitter.com
+#userstream.twitter.com
+#ssl.twitter.com
+#status.twitter.com
+route delete 72.32.231.0/24 $vpngw
+#assets0.twitter.com
+#assets1.twitter.com
+#assets2.twitter.com
+#assets3.twitter.com
+#static.twitter.com
+#platform.twitter.com
+route delete 184.24.0.0/13 $vpngw
+#platform0.twitter.com
+route delete 65.112.0.0/12 $vpngw
+#help.twitter.com
+route delete 199.59.148.212 $vpngw
+#support.twitter.com
+#t.co
+#cdn.cydiahelp.com
+route delete 67.201.31.0/24 $vpngw
+#s3-1-w.amazonaws.com
+route delete 72.21.192.0/19 $vpngw
+#s3-2-w.amazonaws.com
+route delete 207.171.160.0/19 $vpngw
+#s3-3-w.amazonaws.com
+route delete 178.236.0.0/24 $vpngw
+#s3-us-west-1.amazonaws.com
+route delete 204.246.160.0/19 $vpngw
+#connect.facebook.net
+route delete 96.6.0.0/15 $vpngw
+#cdn.api.twitter.com
+#static.ak.fbcdn.net
+route delete 65.112.0.0/12 $vpngw
+#s-static.ak.fbcdn.net
+#j.mp
+route delete 69.58.188.0/24 $vpngw
+#pic.pimg.tw
+route delete 175.41.3.0/24 $vpngw
+#1.gravatar.com
+route delete 68.232.32.0/20 $vpngw
+#yfrog.us
+route delete 208.94.0.0/22 $vpngw
+#wallbase.cc
+route delete 46.105.0.0/16 $vpngw
+#twitpic.com
+route delete 50.22.0.0/15 $vpngw
