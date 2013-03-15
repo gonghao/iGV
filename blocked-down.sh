@@ -2,6 +2,9 @@
 route delete 8.8.8.8 $vpngw
 route delete 8.8.4.4 $vpngw
 route delete 208.67.222.222 $vpngw
+# github.com
+route delete 204.232.175.78 $vpngw
+route delete 207.97.227.239 $vpngw
 # backchina.com
 # news.backchina.com
 route delete 50.23.162.108 $vpngw
@@ -26,7 +29,7 @@ route delete 122.147.51.0/24 $vpngw
 route delete 174.36.30.0/24 $vpngw
 # dl-web.dropbox.com
 route delete 184.72.0.0/16 $vpngw
-route delete 174.129.20/24 $vpngw
+#174.129.20/24
 route delete 75.101.159.0/24 $vpngw
 route delete 75.101.140.0/24 $vpngw
 # dl.dropbox.com
@@ -34,8 +37,11 @@ route delete 50.16.205.0/24 $vpngw
 route delete 107.20.0.0/16 $vpngw
 route delete 23.21.195.0/24 $vpngw
 route delete 23.21.167.0/24 $vpngw
+route delete 174.129.0.0/16 $vpngw
 # wiki.dropbox.com
 route delete 174.36.51.41 $vpngw
+# forums.dropbox.com
+route delete 174.36.51.42 $vpngw
 # login.facebook.com
 #66.220.147.0/24
 #66.220.146.0/24
@@ -192,12 +198,6 @@ route delete 106.187.42.102 $vpngw
 #107.20.170.61
 #107.20.171.210
 route delete 107.21.92.173 $vpngw
-route delete 107.22.178.183 $vpngw
-route delete 107.22.218.45 $vpngw
-route delete 107.22.233.248 $vpngw
-route delete 107.22.234.17 $vpngw
-route delete 107.22.247.36 $vpngw
-route delete 107.22.255.55 $vpngw
 route delete 108.61.37.254 $vpngw
 route delete 109.104.79.84 $vpngw
 route delete 109.233.153.1 $vpngw
@@ -294,19 +294,19 @@ route delete 174.123.203.58 $vpngw
 route delete 174.127.106.50 $vpngw
 route delete 174.127.109.132 $vpngw
 route delete 174.127.97.182 $vpngw
-route delete 174.129.1.157 $vpngw
-route delete 174.129.182.241 $vpngw
-route delete 174.129.197.181 $vpngw
-route delete 174.129.202.202 $vpngw
-route delete 174.129.212.2 $vpngw
-route delete 174.129.219.227 $vpngw
-route delete 174.129.227.239 $vpngw
-route delete 174.129.228.246 $vpngw
-route delete 174.129.242.247 $vpngw
-route delete 174.129.247.225 $vpngw
-route delete 174.129.249.253 $vpngw
-route delete 174.129.32.46 $vpngw
-route delete 174.129.40.161 $vpngw
+#174.129.1.157
+#174.129.182.241
+#174.129.197.181
+#174.129.202.202
+#174.129.212.2
+#174.129.219.227
+#174.129.227.239
+#174.129.228.246
+#174.129.242.247
+#174.129.247.225
+#174.129.249.253
+#174.129.32.46
+#174.129.40.161
 route delete 174.132.147.60 $vpngw
 route delete 174.132.151.226 $vpngw
 route delete 174.132.186.206 $vpngw
@@ -365,10 +365,6 @@ route delete 184.72.125.210 $vpngw
 route delete 184.72.221.111 $vpngw
 route delete 184.72.244.235 $vpngw
 route delete 184.72.246.159 $vpngw
-route delete 184.73.156.0 $vpngw
-route delete 184.73.165.65 $vpngw
-route delete 184.73.216.15 $vpngw
-route delete 184.73.7.154 $vpngw
 route delete 184.82.170.148 $vpngw
 route delete 184.82.227.135 $vpngw
 route delete 184.82.34.68 $vpngw
@@ -1293,3 +1289,20 @@ route delete 208.94.0.0/22 $vpngw
 route delete 46.105.0.0/16 $vpngw
 #twitpic.com
 route delete 50.22.0.0/15 $vpngw
+#amazonaws.com
+route delete 184.73.0.0/16 $vpngw
+route delete 107.22.0.0/16 $vpngw
+#av.vimeo.com
+route delete 204.245.34.0/24 $vpngw
+#img.skitch.com
+route delete 70.32.97.0/24 $vpngw
+#web.archive.org
+route delete 207.241.226.20 $vpngw
+#MyCards
+route delete 220.130.127.97 $vpngw
+#Battle.net
+route delete 121.254.166.35 $vpngw
+#bitsnoop.com
+route delete 31.7.59.14 $vpngw
+#slideshare.net
+route delete 174.36.28.11 $vpngw
